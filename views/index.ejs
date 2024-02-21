@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capstone Project API</title>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+
+<body>
+    <nav>
+        <h1>The Chosen Hero</h1>
+    </nav>
+    <div class="container">
+        <div class="choice-container">
+            <form id="myForm" method="post">
+                <input type="submit" value="Get Classes" formaction="/get-classes">
+            </form>
+            <form id="myClasses" method="post" action="/chosen-class">
+                <ul>
+                    <% if (locals.classes) { %>
+                        <% for(var i=0; i< classes.length; i++) {%>
+                            <li><button name="class" value=<%=classes[i].index %>>
+                                    <%= classes[i].index %>
+                                </button>
+                            </li>
+                            <% } %>
+                                <% } else{%>
+                </ul>
+                <% } %>
+            </form>
+            <% if(locals.chosenClass) {%>      
+            <form id="getSkill" method="post">
+                <input type="submit" value="Choose Skills" formaction="/get-skills">
+            </form>
+            <form id="myClasses" method="post">
+            </form>
+            <% } %>
+        </div>
+        <% if(locals.chosenClass) {%>
+            <p class="class-hero">
+                <%= chosenClass %> 🦸‍♂️
+            </p>
+            <% } else{%>
+                <p>No class yet</p>
+                <% } %>
+
+                
+                    <% if (locals.listSkills) { %>
+                        <p><%= listSkills.length %></p>
+                                <% } else{%>        
+                <% } %>
+           
+    </div>
+
+</body>
+
+</html>

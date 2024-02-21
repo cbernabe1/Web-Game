@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    gap: 40px;
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+nav{
+    width: 100vw;
+    height: 50px;
+    background-color: cornflowerblue;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    color: #000;
+}
+
+nav h1{
+    font-size: 1rem;
+    text-transform: uppercase
+}
+.container{
+    width: 100vw;
+    height: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+
+.choice-container{
+    width: 500px;
+    height: 500px;
+    background-color: cornflowerblue;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+input{
+    padding: 10px 25px;
+    border-radius: 10px;
+}
+
+ul{
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3,100px);
+    width: 300px;
+    grid-gap: 10px;
+}
+li{
+    margin-top: 10px;
+}
+
+button{
+    text-decoration: none;
+    display: flex;
+    width: 100px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    border: 1px solid grey;
+    color: black;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+button:hover{
+    background-color: lightgrey;
+}
+
+.class-hero{
+    font-size: 3rem;
+    text-transform: capitalize
+}
