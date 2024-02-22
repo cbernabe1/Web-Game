@@ -87,3 +87,32 @@ button:hover{
     font-size: 3rem;
     text-transform: capitalize
 }
+
+.skills-button{
+    margin-top: 20px;
+}
+
+.table-skills{
+    width: 500px;
+    height: 500px;
+    overflow: auto;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.table-skills::-webkit-scrollbar{
+    width: 0.5rem;
+    height: 0.5rem;
+}
+
+th{
+    text-align: start;
+}
+
+.buttonSkills{
+    border: none;
+    color: black;
+    background-color: white;
+    width: 200px;
+}

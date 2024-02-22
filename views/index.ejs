@@ -30,28 +30,60 @@
                 </ul>
                 <% } %>
             </form>
-            <% if(locals.chosenClass) {%>      
-            <form id="getSkill" method="post">
-                <input type="submit" value="Choose Skills" formaction="/get-skills">
-            </form>
-            <form id="myClasses" method="post">
-            </form>
-            <% } %>
+            <% if(locals.chosenClass) {%>
+                <form id="getSkill" method="post">
+                    <input class="skills-button" type="submit" value="Choose Skills" formaction="/get-skills">
+                </form>
+                <form id="myClasses" method="post">
+                </form>
+                <% } %>
         </div>
         <% if(locals.chosenClass) {%>
             <p class="class-hero">
                 <%= chosenClass %> 🦸‍♂️
             </p>
-            <% } else{%>
-                <p>No class yet</p>
-                <% } %>
+            <% if(locals.chosenSkills) {%>
+                <p style="font-weight: bold;">Skills</p>
+                <ul>
+                    <% for(var iii=0; iii< chosenSkills.length;iii++) {%>
+                        <li>
+                            <%= chosenSkills[iii] %>
+                        </li>
+                        <% } %>
+                </ul>
+                <% }%>
+                    <% } else{%>
+                        <p>No class yet</p>
+                        <% } %>
+                            <div class="table-skills">
+                                <form id="myClasses" method="post" action="/chosen-skills">
+                                    <% if (locals.listSkills) { %>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th>Name</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <% for(var ii=0; ii < listSkills.length; ii++) {%>
+                                                    <tr>
+                                                        <td>
 
-                
-                    <% if (locals.listSkills) { %>
-                        <p><%= listSkills.length %></p>
-                                <% } else{%>        
-                <% } %>
-           
+                                                            <button class="buttonSkills" name="skill"
+                                                                value=<%=listSkills[ii].name %>>
+                                                                <%= listSkills[ii].name %>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                    <% } %>
+                                            </tbody>
+
+                                        </table>
+                                        <% } else{%>
+                                            <% } %>
+                                </form>
+                            </div>
+
     </div>
 
 </body>
