@@ -35,6 +35,7 @@ app.post("/get-skills", async(req,res)=>{
     try {
         const result = await axios.get(API_URl + "spells");
         listOfSkills = result.data.results;
+        console.log(listOfSkills);
         res.render("index.ejs",{listSkills: result.data.results, chosenClass: classChosen});
     } catch (error) {
         console.log(error);
@@ -44,7 +45,8 @@ app.post("/get-skills", async(req,res)=>{
 app.post("/chosen-skills", (req,res)=>{
     try {
         if(skillsChosen.length < 5){
-        skillsChosen.push(req.body.skill)
+        skillsChosen.push(req.body.skill);
+        console.log(req.body.skill);
         }
         res.render("index.ejs",{chosenSkills: skillsChosen, listSkills: listOfSkills, chosenClass: classChosen});
     } catch (error) {
